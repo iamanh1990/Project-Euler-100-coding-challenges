@@ -1,0 +1,23 @@
+function isPalindrome(num) {
+  return Number(num.toString().split('').reverse().join('')) === num;
+}
+
+function largestPalindromeProduct(n) {
+  let max = +[...Array(n)].reduce((a,b) => a+=9, '');
+  let min = (max+1)/10;
+  let result = [];
+  for(let i = max; i >= min; i--) {
+    for(let j = max; j >= min; j--) {
+      let product = i * j;
+      if(isPalindrome(product)) {
+        result.push(product);
+        break;
+      }
+    }
+  }
+  return Math.max(...result);
+}
+
+largestPalindromeProduct(3);
+console.log(largestPalindromeProduct(3));
+console.log(isPalindrome(9009))

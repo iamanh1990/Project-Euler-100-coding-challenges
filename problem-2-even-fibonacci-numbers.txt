@@ -1,0 +1,12 @@
+function fiboEvenSum(n) {
+  let fiboArr = [2, 1];
+  let curr = 0;
+  for(let i=0; curr < n; i++) {
+    curr = fiboArr[0] + fiboArr[1];
+    fiboArr.unshift(curr);
+  }
+  return fiboArr.slice(1).filter(num => num%2 === 0).reduce((total, num) => total + num);
+}
+
+fiboEvenSum(10);
+console.log(fiboEvenSum(60));

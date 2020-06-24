@@ -1,0 +1,16 @@
+function largestPrimeFactor(number) {
+    let prime = 2;
+    let max = 1;
+    while(prime <= number) {
+      if(number%prime === 0) {
+        number = number/prime;
+        max = prime;
+      } else {
+        prime++;
+      }
+    }
+  return max;
+}
+
+largestPrimeFactor(13195);
+console.log(largestPrimeFactor(13195));
